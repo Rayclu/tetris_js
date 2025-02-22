@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tris</title>
+    <style>
+        pre {
+            background-color: #fdcbcb;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #7ebd96;
+            display: auto;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+        h2 {
+            margin: 10px 0;
+        }
+        canvas {
+            display: flex;
+            border: 2px solid #333;
+            background-color: #f8f8f8;
+        }
+        #ejecucion {
+            display: flex;
+            gap: 20px;
+        }
+        /* Añadimos estilos para el botón */
+        #initGame {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: rgb(46, 29, 29);
+            border: azure;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #initGame:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h2>Código fuente:</h2>
+            <pre id="contenido"></pre>
+        </div>
+        
+        <div id="ejecucion">
+            <canvas id="GameCanvas" width="305" height="647"></canvas>
+            <div>
+                <p>Nivel: <span id="nivel">1</span></p>
+                <p>Líneas: <span id="lines">0</span></p>
+                <p>Puntuación: <span id="score">0</span></p>
+                <button id="initGame">Iniciar juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Primero cargamos el script para su ejecución -->
+    <script type="module" src="manejo-archivos/ttris_modules/main.js"></script>
+    
+    <!-- Luego mostramos el código fuente -->
+    <script>
+        fetch('manejo-archivos/ttris_modules/main.js')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contenido').textContent = data;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
