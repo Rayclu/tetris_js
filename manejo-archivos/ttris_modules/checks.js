@@ -1,6 +1,6 @@
 const CONSOLIDE = 2;
 
-export function CanPieceGoDown(game) {
+/*export function CanPieceGoDown(game) {
     console.log(game);
     const grill = game[0]
     
@@ -25,13 +25,21 @@ export function CanPieceGoDown(game) {
         return Error ("The piece is not into the grill");
     }
 }
-
-export function CheckArea(game, rotate = false, left = false, right = false) {
+*/
+export function CanPieceGoDown(game) {
+    
+}
+export function CheckArea(game, superior = false ,rotate = false, left = false, right = false) {
     const grill = game[0];
     const piece = game[1];
 
     switch (true) {
-        case left: //Check if the piece can go left.
+        case superior: //Check if the piece can go left.
+            for (let coord of piece) {
+                if(!coord[0] >= 0) return false;
+            }
+            
+            case left: //Check if the piece can go left.
             for (let coord of piece) {
                 const NewX = coord[0]-1;
                 const currentY = coord[1];

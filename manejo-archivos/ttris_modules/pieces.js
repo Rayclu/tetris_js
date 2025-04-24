@@ -79,7 +79,7 @@ export class Piece {
         }
         return rotated;
     }
-    down(game) { 
+    down(piece) { 
         // Modificamos cada coordenada y retornamos la pieza modificada
         let NewPiece = JSON.parse(JSON.stringify(game[1]));
         NewPiece.forEach(coords => {

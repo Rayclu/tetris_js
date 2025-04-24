@@ -107,9 +107,8 @@ async function main() {
             
             // Verificamos si la pieza puede bajar
             if (CanPieceGoDown(game)) {
-                // Mover la pieza hacia abajo
-                game[1] = p1.down(game); // Aquí llamas al método down de la instancia de Piece
-                tickCount = 0; // Reiniciamos el contador de ticks
+                game[1] = p1.down(game);
+                tickCount = 0;
             } else if (!CanPieceGoDown(game)){
                 console.log(game)
 
